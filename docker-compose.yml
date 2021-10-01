@@ -1,0 +1,10 @@
+version: '3'
+services:
+  py:
+    image: python:3.6-slim-buster
+    container_name: py
+    restart: always
+    volumes:
+      - ./scripts:/py-scripts
+    command: bash -c "cd /py-scripts && ./start.sh"
+    working_dir: /py-scripts
